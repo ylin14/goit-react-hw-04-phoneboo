@@ -38,7 +38,7 @@ function PhoneBook() {
 
   const addContacts = useCallback(
     data => {
-      const isDuplicated = contacts.find(item => item.name === data.name);
+      const isDuplicated = contacts.find(item => item.name.toLowerCase() === data.name.toLowerCase());
       if (isDuplicated) {
         return alert(`${data.name} is already in your Phonebook`);
 
